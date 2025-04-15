@@ -1,0 +1,2364 @@
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Duração da animação */
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url(../../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url(../../fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url(../../fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(../../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url(../../fonts/Montserrat-Light.ttf);
+}
+
+body {
+    background-color: #F5F5F7;
+}
+
+/* LISTAR CARGOS */
+
+.rh_cargos-container {
+    position: relative;
+    left: 210px;
+    margin-left: -180px;
+    margin-top: 90px;
+}
+
+.modal-calendar p, a {
+    padding: 0px;
+}
+
+.rh_section-title {
+    margin-top: -10px;
+}
+
+.rh_section-title h1 {
+    font-family: 'Montserrat-Bold';
+    color: #383838;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.rh_section-title span {
+    font-family: 'Montserrat-Medium';
+    font-size: 15px;
+    color: #A6A6A6;
+}
+
+.rh_cargos-header {
+    margin-top: 30px;
+    display: flex;
+}
+
+.rh_search-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.rh_search-input {
+    border: 2px solid transparent;
+    width: 650px;
+    height: 2.5em;
+    padding-left: 3.5em;
+    padding-right: 2.5em;
+    outline: none;
+    overflow: hidden;
+    background-color: #f5f3f3;
+    border-radius: 5px;
+    transition: all 0.5s;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rh_search-input::placeholder {
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+}
+
+.rh_search-input:hover,
+.rh_search-input:focus {
+    border: 2px solid #FF1A1A;
+    box-shadow: 0px 0px 0px 4px rgba(236, 74, 93, 0.2);
+    background-color: white;
+}
+
+.rh_search-icon {
+    position: absolute;
+    left: 1.2em;
+    width: 1.5em;
+    height: 1.3em;
+    fill: #9e9ea7;
+}
+
+.rh_clear-btn {
+    position: absolute;
+    left: 32em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: #9e9ea7;
+}
+
+.rh_clear-btn::before {
+    content: '×';
+}
+
+.rh_filter-group {
+    margin-left: 50px;
+    display: flex;
+    gap: 35px;
+}
+
+.rh_cargos-order {
+    width: 300px;
+    height: 2.5em;
+    background-color: #f5f3f3;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1px;
+}
+
+.rh_cargos-order img.rotate {
+    transform: rotate(180deg);
+}
+
+.rh_cargos-order h3 {
+    font-family: 'Montserrat-Medium';
+    color: #484747;
+    font-size: 13px;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+.rh_cargos-order span {
+    font-family: 'Montserrat-SemiBold';
+    color: #777777;
+}
+
+.rh_order-arrow {
+    position: absolute;
+    left: 970px;
+    height: 18px;
+}
+
+.rh_cargos-cadastrar {
+    width: 180px;
+    height: 2.5em;
+    background-color: #FF1A1A;
+    border-radius: 10px;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+    margin-top: 1px;
+}
+
+.rh_cargos-cadastrar:hover {
+    transform: scale(1.1);
+}
+
+.rh_cargos-cadastrar img {
+    margin-left: 60px;
+    height: 30px;
+}
+
+.rh_cargos-cadastrar h3 {
+    font-size: 15px;
+    color: #fff!important;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.rh_filter-group a {
+    text-decoration: none;
+}
+
+.rh_categories {
+    display: flex;
+    font-family: 'Montserrat-SemiBold';
+    margin-top: 50px;
+    font-size: 12px;
+    color: #303030;
+}
+
+.rh_categories h1 {
+    font-family: 'Montserrat-Medium';
+    font-size: 18px;
+}
+
+.rh_categorie-1 {
+    margin-right: 7em;
+    margin-left: 15px;
+}
+
+.rh_categorie-2 {
+    margin-right: 17.8em;
+}
+
+.rh_list_cargos-content {
+    background-color: #f7f4f4;
+    height: 45px;
+    width: 50em;
+    margin-top: 15px;
+    border-radius: 5px;
+    align-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rh_list_cargos-content_text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding-left: 15px;
+    place-items: center;
+}
+
+.rh_list_cargos-content_text .rh_list_cargos-text-1 {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 15px;
+    margin-right: 11em;
+    color: #4D4D4D;
+}
+
+.rh_list_cargos-content_text .rh_list_cargos-text-2 {
+    font-family: 'Montserrat-Medium';
+    font-size: 12px;
+    margin-right: 0px;
+    color: #4D4D4D;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.rh_list_cargos-wage-box {
+    height: 25px;
+    width: 100px;
+    background-color: #f71515;
+    border-radius: 8px;
+    align-content: center;
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #fff;
+    margin-left: 140px;
+}
+
+footer {
+    height: 40px;
+}
+
+.rh_popover {
+    position: absolute;
+    top: 140px;
+    width: 300px!important;
+    margin-left: -10px;
+    height: 130px;
+    background-color: #FFFFFF;
+    color: #303030;
+    align-items: flex-start;
+    padding: 15px 15px 15px 10px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    --bs-popover-max-width: 300px;
+}
+
+.rh_popover h1 {
+    font-size: 13px;
+    font-family: 'Montserrat-Medium';
+    cursor: pointer;
+}
+
+.rh_popover {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.rh_popover-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rh_selected {
+    font-weight: bold;
+    color: #FF1A1A;
+}
+
+.rh_popover-content li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* DETALHES CARGOS */
+
+.rh_details_cargo_box {
+    max-width: 1215px;
+    height: 500px;
+    margin-top: 15px;
+    background-color: #F3F3F3;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px 15px 15px 30px;
+}
+
+.rh_cargo-box_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rh_cargo-box_title img {
+    height: 30px;
+    margin-top: -5px;
+}
+
+.rh_details_cargo_box h1 {
+    font-family: 'Montserrat-Bold';
+    font-size: 25px;
+    color: #515151;
+}
+
+.rh_details_cargo_box .rh_cargo_form {
+    margin-top: -20px;
+    display: flex;
+    gap: 50px;
+}
+
+.rh_cargo_form h3 {
+    font-family: 'Montserrat-Medium';
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #3f3f3f;
+}
+
+.rh_form-input {
+    height: 35px;
+    width: 350px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.rh_form-input::placeholder {
+    font-family: 'Montserrat-SemiBold';
+    color: #4D4D4D;
+    font-size: 12px;
+}
+
+.rh_form-container {
+    margin-bottom: 30px;
+}
+
+#form-input {
+    height: 263px;
+    width: 350px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+}
+
+#rh_form-input_2 {
+    height: 263px;
+    width: 350px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+}
+
+#rh_form-input_2::placeholder {
+    font-family: 'Montserrat-SemiBold';
+    color: #4D4D4D;
+}
+
+#rh_form-input_3 {
+    height: 355px;
+    width: 400px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+    width: 350px;
+}
+
+#rh_form-input_3::placeholder {
+    font-family: 'Montserrat-SemiBold';
+    color: #4D4D4D;
+    font-size: 12px;
+}
+
+.rh_form-input,
+#rh_form-input_2,
+#rh_form-input_3,
+#rh_form-input_6 {
+    font-family: 'Montserrat-Medium';
+    color: #4D4D4D;
+    font-size: 13px;
+}
+
+.rh_form-input,
+.rh_details_form-input_salario[readonly],
+textarea[readonly] {
+    /* background-color: rgba(222, 220, 220, 0.1); */
+    color: #333;
+    font-size: 13px;
+}
+
+.rh_details_form-input_salario[readonly],
+textarea[readonly] {
+    background-color: rgba(226, 224, 224, 0.1);
+    color: #333;
+    cursor: not-allowed;
+}
+
+.rh_form-input[readonly]:hover,
+textarea[readonly]:hover {
+    cursor: not-allowed;
+}
+
+.rh_form-input[readonly] {
+    background-color: rgba(222, 220, 220, 0.1);
+}
+
+.rh_details_save-message {
+    font-family: 'Montserrat-Medium';
+    color: #FF1A1A;
+    font-size: 13px;
+    display: none;
+}
+
+#rh_form-input_6 {
+    height: 170px;
+    width: 350px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+}
+
+.rh_details_form-input_salario {
+    height: 35px;
+    width: 350px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Montserrat-Medium';
+    color: #4D4D4D;
+    font-size: 13px;
+}
+
+/* ADICIONAR CARGOS */
+
+.rh_add-cargo_container {
+    display: flex;
+    gap: 65px;
+}
+
+.rh_add-cargo_content1 {
+    font-family: 'Montserrat-Regular';
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #3f3f3f;
+    margin-top: 40px;
+}
+
+.rh_add-cargo_content2 {
+    margin-top: 40px;
+    font-family: 'Montserrat-Regular';
+    font-size: 18px;
+    color: #3f3f3f;
+}
+
+.rh_add-cargo_content1 h3,
+.rh_add-cargo_content2 h3 {
+    margin-bottom: 5px!important;
+    font-size: 15px;
+}
+
+.rh_form-input_1 {
+    height: 35px;
+    width: 400px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #4D4D4D;
+}
+
+.rh_form-input_1::placeholder {
+    color: #757775;
+}
+
+#nome-completo_input,
+.rh_add_description-input {
+    width: 400px!important;
+}
+
+.rh_cargo-box_title {
+    font-size: 13px;
+    color: #444343;
+    margin-bottom: 20px;
+}
+
+.rh_cargo-box_title h1 {
+    font-size: 20px;
+    font-family: 'Montserrat-SemiBold';
+}
+
+#salario-base_input,
+#media-salario_input {
+    width: 375px;
+}
+
+#salario-base_input::placeholder {
+    font-size: 13px;
+    font-family: 'Montserrat-Medium';
+    color: #757775;
+}
+
+#media-salario_input::placeholder {
+    font-size: 13px;
+    font-family: 'Montserrat-Medium';
+    color: #757775;
+    color: #757775;
+}
+
+#rh_add_form-input_2 {
+    height: 263px;
+    width: 350px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+}
+
+#rh_add_form-input_2::placeholder {
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #757775;
+}
+
+#rh_add_form-input_3 {
+    height: 210px!important;
+    width: 400px;
+    border: solid 2px #FF1A1A;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
+}
+
+#rh_add_form-input_3::placeholder {
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #757775;
+}
+
+.rh_add_comentarios-pesquisa_input {
+    height: 115px!important;
+    width: 375px!important;
+    font-size: 13px;
+    color: #4D4D4D;
+    font-family: 'Montserrat-Medium';
+}
+
+.rh_add-cargo_content3 {
+    margin-top: 40px;
+}
+
+.rh_add_upload-box_title h1 {
+    font-family: 'Montserrat-Bold';
+    font-size: 15px;
+    color: #515151;
+}
+
+.rh_add_upload-input {
+    max-width: 190px;
+    display: none;
+}
+
+.rh_add_labelFile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 315px;
+    height: 100px;
+    border: 2px dashed #FF1A1A;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    color: #404040;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.rh_add_upload-box p {
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+}
+
+.rh_add_upload-box span {
+    color: #FF1A1A;
+}
+
+.rh_add_uploaded-itens {
+    margin-top: 30px;
+}
+
+.rh_add_uploaded-itens_title h3 {
+    font-family: 'Montserrat-Regular';
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.rh_add_uploaded-itens_box {
+    display: flex;
+    margin-top: 5px;
+    flex-wrap: wrap;
+    gap: 2px;
+    width: 315px;
+    height: auto;
+    background-color: #f8f7f7;
+    border-radius: 7px;
+    box-shadow: 0 2px 15px 2px rgba(0, 0, 0, 0.1);
+}
+
+.rh_add_uploaded-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.rh_add_close-icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.rh_add_uploaded-item:hover .rh_add_close-icon {
+    display: block;
+}
+
+.rh_add_notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    height: 50px;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+    box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat-Medium';
+    font-size: 12px;
+    align-items: center;
+}
+
+.rh_add_notification img {
+    height: 30px;
+    margin-left: -10px;
+    margin-right: 5px;
+}
+
+#notification {
+    background-color: #09c835;
+    color: #000000;
+}
+
+#delete-notification {
+    background-color: #FF1A1A;
+    color: #ffffff;
+}
+
+.rh_add_success-icon {
+    width: 24px; 
+    height: 24px;
+    margin-right: 10px; 
+}
+
+.rh_add_cadastrar-button {
+    width: 200px;
+    height: 40px;
+    background-color: #FF1A1A;
+    margin-top: 50px;
+    margin-left: 115px;
+    border-radius: 10px;
+    align-items: center;
+    align-content: center;
+    transition: transform 0.2s, opacity 0.2s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.rh_add_cadastrar-button.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rh_add_cadastrar-button p {
+    font-family: 'Montserrat-Medium';
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+}
+
+.rh_add_cadastrar-button:hover {
+    transform: scale(1.1);
+}
+
+.rh_form-input, .rh_add_description-input {
+    /* cursor: not-allowed; */
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #4D4D4D;
+    /* background-color: rgba(222, 220, 220, 0.1); */
+}
+
+/* LISTAR FUNCIONÁRIOS */
+
+.rh_funcionarios-container {
+    margin-left: 145px;
+    margin-top: 10px;
+}
+
+.rh_list_funcionarios-header {
+    margin-top: 30px;
+    display: flex;
+}
+
+.rh_list_funcionarios-categories {
+    display: flex;
+    margin-top: 50px;
+    color: #303030;
+    margin-left: 100px;
+}
+
+.rh_list_funcionarios-categories h1 {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 18px;
+}
+
+.rh_list_categorie-4 {
+    margin-right: 120px;
+}
+
+.rh_list_categorie-5 {
+    margin-right: 80px;
+}
+
+.rh_list_categorie-6 {
+    margin-right: 90px;
+}
+
+.rh_list_categorie-7 {
+    margin-right: 80px;
+}
+
+.rh_list_categorie-8 {
+    margin-right: 65px;
+}
+
+.rh_list_funcionarios-box_container {
+    margin-top: 15px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rh_list_funcionario-box_img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: #D4D4D4;
+    background-image: url(../../img/funcionario-user_img.svg);
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position-x: 40%;
+}
+
+.rh_list_user_full-name {
+    font-family: 'Montserrat-Regular';
+    margin-left: 18px;
+    font-size: 15px;
+    color: #494747;
+}
+
+.rh_list_funcionario-cargo_box {
+    width: 100px;
+    height: 25px;
+    background-color: #fff;
+    align-content: center;
+    border-radius: 15px;
+    margin-left: 85px;
+    border: 2px solid #FF1A1A;
+    margin-bottom: 10px;
+}
+
+.rh_list_funcionario-cargo_box p {
+    font-family: 'Montserrat-Medium';
+    text-align: center;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.rh_list_register-number {
+    font-family: 'Montserrat-Regular';
+    margin-left: 132px;
+    font-size: 15px;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.rh_list_admission-date {
+    font-family: 'Montserrat-Regular';
+    margin-left: 210px;
+    font-size: 15px;
+    color: #777777;
+    margin-bottom: 13px;
+}
+
+.rh_checkbox-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 147px;
+    margin-bottom: 30px;
+}
+
+.rh_checkbox-wrapper .rh_background {
+    fill: #6EFC62;
+    transition: none;
+}
+
+.rh_checkbox-wrapper .rh_stroke {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    transition: none;
+}
+
+.rh_checkbox-wrapper .check {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    stroke-dashoffset: 22;
+    stroke-dasharray: 22;
+    transition: none;
+}
+
+.rh_checkbox-wrapper input[type=checkbox] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    opacity: 0;
+    -appearance: none;
+    -webkit-appearance: none;
+}
+
+.rh_checkbox-wrapper input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+.rh_checkbox-wrapper input[type=checkbox]:checked + svg .rh_background {
+    fill: #6EFC62;
+}
+
+.rh_checkbox-wrapper input[type=checkbox]:checked + svg .rh_stroke {
+    stroke-dashoffset: 0;
+}
+
+.rh_checkbox-wrapper input[type=checkbox]:checked + svg .check {
+    stroke-dashoffset: 0;
+}
+
+.rh_funcionarios-box_container img {
+    width: 28px;
+    height: 28px;
+    margin-left: 95px;
+}
+
+.rh_checkbox-wrapper {
+    pointer-events: none;
+}
+
+.rh_list_actions-img {
+    margin-left: 95px;
+    margin-bottom: 20px;
+}
+
+/* EDITAR FUNCIONÁRIOS */
+
+.rh_edit_funcionarios-info_box {
+    margin-top: 20px;
+    max-width: 1230px;
+    height: 520px;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.3);
+    background-color: #f0efef;
+    border-radius: 10px;
+    padding: 20px 0px 0px 30px;
+}
+
+.rh_edit_funcionarios_info-content {
+    display: flex;
+}
+
+.rh_edit_funcionarios_info-content_1 {
+    margin-right: 50px;
+}
+
+.rh_edit_funcionarios_info-content_3 {
+    margin-left: -50px;
+}
+
+.rh_edit_funcionarios-info_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rh_edit_funcionarios-info_header h3 {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 20px;
+    color: #292929;
+}
+
+.rh_edit_funcionarios-info_header img {
+    height: 30px;
+    margin-top: -8px;
+    margin-right: 20px;
+}
+
+.rh_edit_funcionarios_info-geral_content {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.rh_edit_funcionarios_processo-seletivo_content {
+    margin-bottom: 25px;
+}
+
+.rh_edit_funcionarios-info_box h4 {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 15px;
+    color: #333131;
+    margin-bottom: 10px;
+}
+
+.rh_edit_funcionarios-info_box p {
+    font-family: 'Montserrat-Regular';
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: #5B5B5B;
+}
+
+.rh_edit_funcionarios_exames-content_1 {
+    margin-bottom: 15px;
+}
+
+.rh_edit_funcionarios_beneficions-content_1 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.rh_edit_funcionarios_info-content_2 {
+    margin-left: 50px;
+}
+
+.rh_edit_funcionarios_beneficions-content_2 {
+    margin-bottom: 15px;
+}
+
+.rh_edit_funcionarios_beneficions-content_2 ul, li {
+    font-family: 'Montserrat-Regular';
+    font-size: 13px;
+    color: #5B5B5B;
+    margin-bottom: 0px;
+}
+
+.rh_edit_funcionarios_dependentes-salarios_box {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 105px;
+}
+
+.rh_edit_funcionarios_dependentes-content {
+    margin-right: -240px;
+}
+
+.rh_edit_funcionarios_descontos-content {
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.rh_edit_funcionarios_descontos-content ul, li {
+    font-family: 'Montserrat-Regular';
+    font-size: 13px;
+    color: #5B5B5B;
+    margin-bottom: 4px;
+}
+
+.rh_edit_funcionarios_periculosidade-insalubridade_content ul, li {
+    font-family: 'Montserrat-Regular';
+    font-size: 13px;
+    color: #5B5B5B;
+    margin-bottom: 4px;
+}
+
+.rh_edit_funcionarios_periculosidade-content {
+    margin-bottom: 10px;
+}
+
+.rh_edit_funcionarios_dados-button_content {
+    right: 0;
+    margin-left: 250px;
+    margin-top: 0px;
+}
+
+#rh_registro-input {
+    width: 33%!important;
+}
+
+#rh_admissao-input {
+    width: 38%!important;
+}
+
+#rh_fase1-input {
+    width: 66%;
+}
+
+#rh_fase2-input {
+    width: 65%;
+}
+
+#rh_exame1-input {
+    width: 45%;
+}
+
+#rh_dataexame1-input {
+    width: 43.5%;
+}
+
+#rh_resultado1-input {
+    width: 56.5%;
+}
+
+#rh_exame2-input {
+    width: 45%;
+}
+
+#rh_dataexame2-input {
+    width: 43.5%;
+}
+
+#rh_resultado2-input {
+    width: 56.5%;
+}
+
+#rh_beneficio-input {
+    width: 35%;
+}
+
+#rh_ferias-aquisitivo {
+    width: 45%;
+}
+
+#rh_ferias-concessivo {
+    width: 43%;
+}
+
+#rh_ferias-gozo {
+    width: 52%;
+}
+ 
+.rh_edit_funcionarios_dados-button_content h3 {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 15px;
+}
+
+.rh_edit_funcionarios_dados-button {
+    width: 170px;
+    height: 30px;
+    background-color: #FF1A1A;
+    margin-top: 10px;
+    border-radius: 50px;
+    background-image: url(../../img/upload-dados_img.svg);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s;
+}
+
+.rh_edit_funcionarios_dados-button:hover {
+    background-color: #dc2222;
+}
+
+.rh_edit_funcionarios_info-content p {
+    font-size: 13px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.rh_edit_funcionarios_info-content input[type="text"],
+.rh_edit_funcionarios_info-content input[type="number"] {
+    font-family: 'Montserrat-Regular';
+    border: 1px solid #FF1A1A;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #333;
+    background-color: transparent;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.rh_edit_funcionarios_info-content input[type="text"].editable,
+.rh_edit_funcionarios_info-content input[type="number"].editable {
+    border: solid 1px #FF1A1A;
+    border-radius: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: transparent;
+}
+
+input[readonly]:focus {
+    outline: none;
+}
+
+.rh_edit_funcionarios_info-geral_content #cargo-input {
+    width: 238px;
+}
+
+.rh_edit_funcionarios_beneficions-content_2 .rh_edit_funcionarios_beneficios-input {
+    width: 50px!important;
+}
+
+.rh_edit_funcionarios_salario-content {
+    display: flex;
+}
+
+.rh_edit_funcionarios_salario-content_box {
+    margin-left: -100px;
+}
+
+#rh_dependentes-input {
+    width: 22%;
+}
+
+#rh_salario-input {
+    width: 32%;
+}
+
+.rh_edit_funcionarios_dependentes-content #dependentes-input {
+    width: 40px!important;
+    margin-right: 30px;
+}
+
+.rh_edit_funcionarios_salario-content h4 {
+    display: flex;
+}
+
+.rh_edit_funcionarios_salario-content #salario-input {
+    width: 60px;
+    padding-left: 4px!important;
+    margin-left: 3px;
+}
+
+.rh_edit_funcionarios_salario-content p {
+    display: flex;
+    align-items: center;
+}
+
+.rh_edit_funcionarios_salario-content input {
+    margin-left: 3px;
+}
+
+.rh_edit_funcionarios_ferias-content {
+    margin-top: 10px;
+}
+
+#salario-display {
+    margin-right: 10px;
+    padding-left: 3px!important;
+}
+
+.rh_edit_funcionarios_beneficions-content_2 ul {
+    font-family: 'Montserrat-Medium';
+    color: #504e4e;
+}
+
+.rh_edit_funcionarios_beneficions-content_2 li {
+    width: 445px;
+}
+
+.rh_edit_funcionarios_descontos-content li {
+    width: 445px;
+}
+
+.rh_edit_funcionarios_adicional-input {
+    width: 155px!important;
+}
+
+.rh_edit_funcionarios_percentual-input {
+    width: 50px!important;
+}
+
+/* ADICIONAR FUNCIONÁRIOS - DADOS PESSOAIS */
+
+.rh_add-funcionarios_container {
+    margin-left: 50px;
+    margin-top: 90px;
+}
+
+.rh_add-funcionarios_form {
+    display: flex;
+}
+
+.rh_add_progress-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.rh_add_steps-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.rh_add_steps-description .rh_add_description {
+    margin-bottom: 29px;
+    direction: rtl;
+}
+
+.rh_add_steps-description .rh_add_description h3 {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 16px;
+    color: #464646;
+    margin-bottom: 5px;
+}
+
+.rh_add_steps-description .rh_add_description p {
+    font-family: 'Montserrat-Medium';
+    font-size: 15px;
+    color: #959595;
+}
+
+.rh_add_progress-container .rh_add_steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.rh_add_steps .rh_add_circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 50%;
+    background: #C2C2C2;
+    transition: all 200ms ease;
+}
+
+.rh_add_steps .rh_add_circle.rh_active {
+    background-color: #FF1A1A;
+    transition-delay: 100ms;
+    color: #ffffff;
+}
+
+.rh_add_steps .rh_add_progress-bar {
+    position: absolute;
+    height: 2px;
+    width: 300px;
+    margin-top: 170px;
+    background: #C2C2C2;
+    z-index: -1;
+    transform: rotate(90deg);
+}
+
+.rh_add_steps .rh_add_indicator {
+    display: block;
+    height: 100%;
+    background: #FF1A1A;
+    /* transition: width 0.3s ease; */
+    margin-top: 0;
+}
+
+/* .rh_add_indicator.reverse {
+    transition: width 0.4s ease;
+    width: 0;
+} */
+
+.rh_add_steps a {
+    text-decoration: none;
+}
+
+.rh_steps-container #circle-1 {
+    background-image: url(../../img/step-img_1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
+    background-position-y: 45%;
+}
+
+.rh_steps-container #circle-2 {
+    background-image: url(../../img/step-img_2.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    background-position-x: 55%;
+    background-position-y: 45%;
+}
+
+.rh_steps-container #circle-3 {
+    background-image: url(../../img/step-img_3.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    background-position-y: 55%;
+}
+
+.rh_steps-container #circle-4 {
+    background-image: url(../../img/step-img_4.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    background-position-y: 65%;
+}
+
+.rh_steps-container #circle-5 {
+    background-image: url(../../img/step-img_6.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    background-position-y: 60%;
+}
+
+.rh_add_dados-form_container {
+    position: fixed;
+    margin-top: 40px;
+    margin-left: 500px;
+}
+
+.rh_add_dados-form_header h3 {
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #959595;
+}
+
+.rh_add_dados-form_title {
+    margin-top: 10px;
+}
+
+.rh_add_dados-form_title h1 {
+    font-family: 'Montserrat-Bold';
+    color: #515151;
+    font-size: 23px;
+    margin-bottom: -3px;
+}
+
+.rh_add_dados-form_title p {
+    font-family: 'Montserrat-Medium';
+    font-size: 14px;
+    color: #959595;
+}
+
+.rh_add_form-input_container {
+    margin-top: 20px;
+}
+
+.rh_add_form-input_container h4 {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.rh_add_form-input_container input {
+    border: 2px solid #FF1A1A;
+    border-radius: 5px;
+    height: 35px;
+    padding: 10px;
+    width: 400px;
+    font-size: 13px;
+    font-family: 'Montserrat-Medium';
+    color: #5b5858;
+}
+
+.rh_add_form-input_container input::placeholder {
+    font-family: 'Montserrat-Medium';
+    color: #5b5858;
+    font-size: 12px;
+}
+
+.input-product-search:focus, input:hover {
+    box-shadow: none;
+}
+
+.rh_add_form-input_content {
+    display: flex;
+    gap: 10px;
+}
+
+.rh_add_form-input_register input {
+    width: 200px;
+}
+
+.rh_add_date-input_admission {
+    position: relative;
+    font-family: 'Montserrat-Medium';
+    color: #5b5858;
+    font-size: 12px;
+    width: 200px!important;
+}
+
+.rh_add_form-input_rg input {
+    width: 300px;
+}
+
+.rh_add_form-input_cpf input {
+    width: 300px;
+}
+
+.rh_add_documents-area_container {
+    display: flex;
+}
+
+.rh_add_documents-area_header {
+    margin-top: 25px;
+}
+
+.rh_add_documents-area_header h3 {
+    font-family: 'Montserrat-Bold';
+    font-size: 19px;
+    color: #515151;
+    margin-bottom: 2px;
+}
+
+.rh_add_documents-area_header p {
+    font-family: 'Montserrat-Regular';
+    font-size: 15px;
+    color: #959595;
+}
+
+.rh_add_documents-area_checkbox {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #2C2C2C;
+}
+
+.rh_add_checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.rh_add_checkbox-container input {
+    height: 18px;
+    width: 18px;
+}
+
+.rh_add_checkbox-container span {
+    font-family: 'Montserrat-Medium';
+    margin-left: 5px;
+}
+
+.rh_add_ui-checkbox {
+    --primary-color: #FF1A1A;
+    --secondary-color: #fff;
+    --primary-hover-color: #FF1A1A;
+    --checkbox-diameter: 15px;
+    --checkbox-border-radius: 2px;
+    --checkbox-border-color: #d9d9d9;
+    --checkbox-border-width: 1px;
+    --checkbox-border-style: solid;
+    --checkmark-size: 1;
+}
+
+.rh_add_ui-checkbox, 
+.rh_add_ui-checkbox *, 
+.rh_add_ui-checkbox *::before, 
+.rh_add_ui-checkbox *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.rh_add_ui-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: var(--checkbox-diameter);
+    height: var(--checkbox-diameter);
+    border-radius: var(--checkbox-border-radius);
+    background: var(--secondary-color);
+    border: var(--checkbox-border-width) var(--checkbox-border-style) var(--checkbox-border-color);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.rh_add_ui-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+    box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+    border-radius: inherit;
+    opacity: 0;
+    -webkit-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+    -o-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+    transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+
+.rh_add_ui-checkbox::before {
+    top: 40%;
+    left: 50%;
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 7px;
+    border-right: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    -ms-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    opacity: 0;
+    -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+    -o-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+    transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+}
+
+.rh_add_ui-checkbox:hover {
+    border-color: var(--primary-color);
+}
+
+.rh_add_ui-checkbox:checked {
+    background: var(--primary-color);
+    border-color: transparent;
+}
+
+.rh_add_ui-checkbox:checked::before {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+    -ms-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+    transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+    -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    -o-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}
+
+.rh_add_ui-checkbox:active:not(:checked)::after {
+    -webkit-transition: none;
+    -o-transition: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    transition: none;
+    opacity: 1;
+}
+
+.rh_add_documentos-add_button {
+    width: 210px;
+    height: 40px;
+    background-color: #FF1A1A;
+    border-radius: 10px;
+    align-content: center;
+    padding-left: 10px;
+    margin-top: 30px;
+    background-image: url(../../img/add-img.svg);
+    background-repeat: no-repeat;
+    background-size: 12%;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    transition: all ease 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rh_add_documentos-add_button span {
+    font-family: 'Montserrat-Medium';
+    font-size: 12px;
+    color: #fff;
+    margin-right: 25px;
+}
+
+.rh_add_documentos-add_button:hover {
+    transform: scale(1.1);
+}
+
+.rh_add_next-button {
+    font-family: 'Montserrat-Medium';
+    position: fixed;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+    padding: 0 3em;
+    border: none;
+    background-color: #FF1A1A;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 50px;
+    bottom: 20px;
+    right: 20px;
+    align-content: center;
+    text-align: center;
+}
+
+.rh_add_next-button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    height: 0px;
+    width: 100%;
+    background: #FF1A1A;
+    background: linear-gradient(90deg, #FF1A1A 20%, #db0808 100%);
+    transition: 0.2s;
+}
+
+.rh_add_next-button .rh_add_label-text_button {
+    position: relative;
+    font-family: 'Montserrat-Medium';
+}
+
+.rh_add_next-button .rh_add_icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    width: 3em;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.rh_add_next-button:hover::before {
+    height: 100%;
+}
+
+.rh_add_next-button:hover .rh_add_icon-button {
+    top: 0;
+    opacity: 1;
+}
+
+.rh_add_document-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rh_add_document-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 500px;
+    position: relative;
+}
+
+.rh_add_document-close {
+    font-family: 'Montserrat-Light';
+    color: #aaa;
+    float: right;
+    font-size: 40px;
+    margin-top: -30px;
+    margin-right: -10px;
+}
+
+.rh_add_document-close:hover,
+.rh_add_document-close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.rh_add_document-modal-content h2 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat-SemiBold';
+    color: #5b5858;
+    font-size: 23px;
+}
+
+.rh_add_document-modal-content input[type="text"] {
+    font-family: 'Montserrat-Medium';
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #aba6a6;
+    border-radius: 4px;
+    height: 40px;
+}
+
+.rh_add_document-modal-content button {
+    font-family: 'Montserrat-Medium';
+    padding: 10px 20px;
+    background-color: #FF1A1A;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 35px;
+    align-self: center;
+    align-content: center;
+}
+
+.rh_add_document-modal-content button span {
+    font-family: 'Montserrat-Medium';
+    text-align: center;
+}
+
+.rh_add_document-modal-content button:hover {
+    background-color: #e31111;
+}
+
+/* ADICIONAR FUNCIONÁRIOS - RECRUTAMENTO */
+
+.rh_add_form-input_triagem input {
+    display: grid;
+    width: 800px;
+    margin-top: 10px;
+}
+
+.rh_add_process-add_button {
+    width: 210px;
+    height: 40px;
+    background-color: #FF1A1A;
+    border-radius: 10px;
+    align-content: center;
+    padding-left: 10px;
+    margin-top: 10.5px;
+    background-image: url(../../img/add-img.svg);
+    background-repeat: no-repeat;
+    background-size: 12%;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    transition: all ease 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rh_add_process-add_button span {
+    font-family: 'Montserrat-Medium';
+    font-size: 11px;
+    color: #fff;
+    margin-right: 25px;
+}
+
+.rh_add_process-add_button:hover {
+    transform: scale(1.1);
+}
+
+.rh_add_process_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999!important; /* Defina um valor alto para garantir a sobreposição */
+}
+
+.rh_add_process_modal_content {
+    margin: auto;
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rh_add_process_close {
+    font-family: 'Montserrat-Light';
+    color: #aaa;
+    float: right;
+    font-size: 40px;
+    margin-top: -30px;
+    margin-right: -10px;
+}
+
+.rh_add_process_close:hover,
+.rh_add_process_close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.rh_add_process_modal_content h2 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat-SemiBold';
+    color: #5b5858;
+    font-size: 23px;
+}
+
+.rh_add_process_modal_content input[type="text"] {
+    font-family: 'Montserrat-Medium';
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #aba6a6;
+    border-radius: 4px;
+    height: 40px;
+}
+
+.rh_add_process_modal_content input::placeholder {
+    font-size: 13px;
+}
+
+.rh_add_process_modal_content button {
+    font-family: 'Montserrat-Medium';
+    padding: 10px 20px;
+    background-color: #FF1A1A;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 35px;
+    align-self: center;
+    align-content: center;
+}
+
+.rh_add_document-modal-content button span {
+    font-family: 'Montserrat-Medium';
+    text-align: center;
+}
+
+.rh_add_document-modal-content button:hover {
+    background-color: #e31111;
+}
+
+.rh_add_form-input_process input {
+    width: 500px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    color: #2C2C2C;
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+}
+
+.rh_add_buttons_container {
+    display: flex;
+    gap: 15px;
+}
+
+.rh_add_buttons_container .rh_add_delete-input {
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #FF1A1A;
+    margin-top: 10px;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.rh_add_buttons_container .rh_add_delete-input:hover {
+    transform: scale(1.1);
+}
+
+.rh_add_buttons_container .rh_add_delete-input .rh_add_button-text {
+    font-family: 'Montserrat-Medium';
+    font-size: 11px;
+    margin-left: -13px;
+    transform: translateX(30px);
+    color: #fff;
+}
+
+/* ADICIONAR FUNCIONÁRIOS - CONTROLE DE EXAMES */
+
+.rh_add_exames-input-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.rh_add_exames_content input {
+    width: 300px;
+    font-family: 'Montserrat-Medium';
+    font-size: 11px;
+    color: #2C2C2C;
+}
+
+.rh_add_form-input_exams_container {
+    display: flex;
+    gap: 20px;
+}
+
+/* ADICIONAR FUNCIONÁRIOS - BENEFÍCIOS */
+
+.rh_add_benefits_content h2 {
+    font-family: 'Montserrat-Medium';
+    font-size: 17px;
+    color: #212020;
+    margin-bottom: 10px;
+}
+
+.rh_add_benefits_input_content {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.rh_add_benefits-add_button {
+    width: 210px;
+    height: 40px;
+    background-color: #FF1A1A;
+    border-radius: 10px;
+    align-content: center;
+    padding-left: 10px;
+    margin-top: -20px;
+    background-image: url(../../img/add-img.svg);
+    background-repeat: no-repeat;
+    background-size: 12%;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    transition: all ease 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rh_add_benefits-add_button span {
+    font-family: 'Montserrat-Medium';
+    font-size: 11px;
+    color: #fff;
+    margin-right: 25px;
+    margin-left: 3px;
+}
+
+.rh_add_benefits-add_button:hover {
+    transform: scale(1.1);
+}
+
+.rh_add_buttons_container .rh_add_delete_benefits-input {
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #FF1A1A;
+    margin-top: 10px;
+    align-items: center;
+    transition: transform 0.2s;
+    margin-top: -20px;
+}
+
+.rh_add_buttons_container .rh_add_delete_benefits-input:hover {
+    transform: scale(1.1);
+}
+
+.rh_add_buttons_container .rh_add_delete_benefits-input .rh_add_button-text {
+    font-family: 'Montserrat-Medium';
+    font-size: 11px;
+    margin-left: 5px;
+    transform: translateX(30px);
+    color: #fff;
+}
+
+.rh_add_benefits_value-content input {
+    width: 200px;
+    font-family: 'Montserrat-Medium';
+    margin-bottom: 30px;
+}
+
+.rh_add_benefits_value-content h4 {
+    font-family: 'Montserrat-Medium';
+    color: #484646;
+    margin-top: 10px
+}
+
+.rh_add_checkbox-wrapper-46 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.rh_add_checkbox-wrapper-46 .rh_add_cbx span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #5d5c5c;
+    transition: all 0.2s ease;
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #FF1A1A;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%; 
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_cbx span:last-child {
+    padding-left: 8px;
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_cbx:hover span:first-child {
+    border-color: #FF1A1A;
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_inp-cbx:checked + .rh_add_cbx span:first-child {
+    background: #FF1A1A;
+    border-color: #FF1A1A;
+    animation: wave-46 0.4s ease;
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_inp-cbx:checked + .rh_add_cbx span:first-child svg {
+    stroke-dashoffset: 0;
+}
+
+.rh_add_checkbox-wrapper-46 .rh_add_inp-cbx:checked + .rh_add_cbx span:first-child:before {
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+@keyframes wave-46 {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+.rh_add_checkbox-wrapper-46 span {
+    font-family: 'Montserrat-Medium';
+    font-size: 18px;
+    color: #222222;
+}
+
+#clear-benefits-button span {
+    margin-left: 1px;
+}
+
+.rh_add_benefits_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.rh_add_benefits_modal_content {
+    margin: auto;
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rh_add_benefits_modal_content select {
+    font-family: 'Montserrat-Medium';
+    color: #777777;
+    font-size: 13px;
+    display: flex;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 360px;
+    border-radius: 5px;
+    border: 1px solid #aba6a6;
+    padding: 5px;
+}
+
+#benefits_type_select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    padding-right: 20px;
+    background-image: none;
+}
+
+.rh_add_benefits_close {
+    font-family: 'Montserrat-Light';
+    color: #aaa;
+    float: right;
+    font-size: 40px;
+    margin-top: -30px;
+    margin-right: -10px;
+}
+
+.rh_add_benefits_close:hover,
+.rh_add_benefits_close:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.rh_add_benefits_modal_content h2 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat-SemiBold';
+    color: #5b5858;
+    font-size: 23px;
+}
+
+.rh_add_benefits_modal_content input[type="text"] {
+    font-family: 'Montserrat-Medium';
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #aba6a6;
+    border-radius: 4px;
+    height: 40px;
+}
+
+.rh_add_benefits_modal_content input::placeholder {
+    font-size: 13px;
+}
+
+.rh_add_benefits_modal_content button {
+    font-family: 'Montserrat-Medium';
+    padding: 10px 20px;
+    background-color: #FF1A1A;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 35px;
+    align-self: center;
+    align-content: center;
+}
+
+.rh_add_document-modal-content button span {
+    font-family: 'Montserrat-Medium';
+    text-align: center;
+}
+
+.rh_add_document-modal-content button:hover {
+    background-color: #e31111;
+}
+
+.rh_add_beneficio-input {
+    width: 400px;
+}
+
+/* ADICIONAR FUNCIONÁRIOS - FÉRIAS */
+
+.rh_add_ferias-input-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.rh_add_ferias_content input {
+    width: 300px;
+}
+
+.rh_add_form-input_exams {
+    margin-bottom: 20px;
+}
+
+.rh_add_form-input_exams h2 {
+    font-family: 'Montserrat-Medium';
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.rh_add_form-input_exams input {
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+    color: #5b5858;
+}
+
+/*----------------CONTEUDO DASHBOARD----------------*/
+
+.dashboard-conteudo {
+    padding: 10px 50px 0 50px; /* Padrão quando o sidebar está fechado */
+    transition: padding 0.3s ease; /* Suave transição na alteração do padding */
+    position: relative; /* Pode ajudar a manter a posição do conteúdo */
+    flex: 1; /* Certifica-se de que ocupa o espaço restante */
+  }
+  
+  .sidebar-open .dashboard-conteudo {
+    padding-left: 10px; /* Ajuste o padding apenas quando o sidebar está aberto */
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info span {
+    margin-right: 10px;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 50%;
+  }
+  
+  .main-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .cards {
+    display: flex;
+    width: 100%;
+    gap: 35px;
+    max-height: 500px;
+  }
+  
+  
+  .notification-section {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .notification button {
+    background-color: white;
+    color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .bottom-section {
+    display: flex;
+    justify-content: space-between;
+  }
