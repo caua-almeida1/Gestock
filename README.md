@@ -66,7 +66,7 @@
 
 ## 📊 Visual Dashboard
 
-![Dashboard Screenshot](./path/to/dashboard-image.png)
+![Dashboard Screenshot](./dashboard.png)
 
 ---
 
