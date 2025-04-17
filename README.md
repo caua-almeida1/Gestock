@@ -15,7 +15,7 @@
 ### 📅 Agenda Inteligente
 - Criação de eventos e tarefas
 - Arraste suave no calendário (drag-and-drop)
-- Filtragem por dia, semana ou mês
+- Filtragem de eventos
 
 ### 🧑‍🏫 Matérias
 - Vinculação de tarefas a matérias específicas
