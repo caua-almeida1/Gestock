@@ -64,5 +64,5 @@
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/usuario/gestock.git
+   git clone https://github.com/caua-almeida1/gestock.git
 
