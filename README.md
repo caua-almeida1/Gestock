@@ -33,7 +33,7 @@
 - Interface fluida com notificações de novas mensagens
 
 ### 📊 Dashboard Interativo
-- Gráficos dinâmicos de movimentação de estoque, tarefas e participação
+- Alertas dinâmicos de tarefas entregues, cadastros e modificações
 - Filtros por períodos: hoje, semana, mês ou ano
 - Análises por hora, dia da semana ou semana do ano
 
@@ -43,7 +43,7 @@
 - Histórico de ações
 
 ### 🔐 Segurança e Autenticação
-- Autenticação por e-mail, telefone, Google, Facebook ou Apple
+- Autenticação por e-mail, telefone ou Google
 - Verificação de código por e-mail (EmailJS)
 - Proteção de dados com Firebase Auth
 
@@ -51,22 +51,18 @@
 
 ## 💻 Tecnologias Utilizadas
 
-- **Frontend:** React.js + Tailwind CSS
-- **Backend:** Firebase (Firestore, Storage, Authentication)
-- **Envio de e-mails:** EmailJS
+- **Frontend:** React.js + CSS3 + Tailwind CSS
+- **Backend:** Firebase (Firestore, Storage, Authentication, Firebase Realtime)
+- **Envio de e-mails:** EmailJS, Nodemailer
 - **Design UI/UX:** Figma
 - **Gráficos:** Recharts
 - **Ícones:** Iconify
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🔧 Como Rodar o Projeto
 
-```bash
-/src
- ├── assets/          # Logos, imagens e ícones
- ├── components/      # Componentes reutilizáveis (botões, cards, inputs)
- ├── pages/           # Páginas do sistema (login, dashboard, agenda, chat, etc)
- ├── services/        # Integrações com Firebase e EmailJS
- ├── context/         # Autenticação e estados globais
- └── utils/           # Funções auxiliares e formatações
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/usuario/gestock.git
+
