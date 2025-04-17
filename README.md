@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# GesTock
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**GesTock** é uma plataforma web desenvolvida para simular o ambiente de trabalho em áreas como **Logística** e **Administração**, auxiliando alunos e professores em atividades práticas, organização de tarefas e gestão de recursos. O projeto foi criado no SENAI com foco na **usabilidade**, **colaboração** e **aprendizado dinâmico**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Funcionalidades
 
-### `npm start`
+### 📦 Gestão de Estoque
+- Cadastro e controle de produtos
+- Atualização de quantidades
+- Filtros por categoria e status
+- Alertas visuais de estoque baixo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📅 Agenda Inteligente
+- Criação de eventos e tarefas
+- Arraste suave no calendário (drag-and-drop)
+- Filtragem por dia, semana ou mês
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🧑‍🏫 Matérias
+- Vinculação de tarefas a matérias específicas
+- Organização de conteúdos por disciplina
+- Suporte para atividades de Logística, Administração e áreas afins
 
-### `npm test`
+### 🗃️ Envio de Arquivos e Tarefas
+- Alunos e professores podem enviar documentos
+- Visualização e histórico de envios
+- Uploads protegidos e armazenados via Firebase Storage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 💬 Chat em Tempo Real
+- Comunicação entre usuários do sistema
+- Suporte a múltiplos tópicos por matéria
+- Interface fluida com notificações de novas mensagens
 
-### `npm run build`
+### 📊 Dashboard Interativo
+- Gráficos dinâmicos de movimentação de estoque, tarefas e participação
+- Filtros por períodos: hoje, semana, mês ou ano
+- Análises por hora, dia da semana ou semana do ano
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 👥 Gerenciamento de Usuários
+- Cadastro de administradores e estudantes
+- Atribuição de permissões
+- Histórico de ações
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🔐 Segurança e Autenticação
+- Autenticação por e-mail, telefone, Google, Facebook ou Apple
+- Verificação de código por e-mail (EmailJS)
+- Proteção de dados com Firebase Auth
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 💻 Tecnologias Utilizadas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend:** React.js + Tailwind CSS
+- **Backend:** Firebase (Firestore, Storage, Authentication)
+- **Envio de e-mails:** EmailJS
+- **Design UI/UX:** Figma
+- **Gráficos:** Recharts
+- **Ícones:** Iconify
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📂 Estrutura do Projeto
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+/src
+ ├── assets/          # Logos, imagens e ícones
+ ├── components/      # Componentes reutilizáveis (botões, cards, inputs)
+ ├── pages/           # Páginas do sistema (login, dashboard, agenda, chat, etc)
+ ├── services/        # Integrações com Firebase e EmailJS
+ ├── context/         # Autenticação e estados globais
+ └── utils/           # Funções auxiliares e formatações
