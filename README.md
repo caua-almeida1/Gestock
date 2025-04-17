@@ -60,6 +60,16 @@
 
 ---
 
+## 💬 Visual Chat
+
+![Chat Screenshot](./path/to/chat-image.png)
+
+## 📊 Visual Dashboard
+
+![Dashboard Screenshot](./path/to/dashboard-image.png)
+
+---
+
 ## 🔧 Como Rodar o Projeto
 
 1. Clone o repositório:
