@@ -62,7 +62,7 @@
 
 ## 💬 Visual Chat
 
-![Chat Screenshot](./path/to/chat-image.png)
+![Chat Screenshot](.chat.png)
 
 ## 📊 Visual Dashboard
 
