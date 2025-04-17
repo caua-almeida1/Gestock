@@ -64,5 +64,26 @@
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/caua-almeida1/gestock.git
+   git clone https://github.com/caua-almeida1/Gestock.git
+   
+2. Acesse o diretório do projeto:
+   ```bash
+   cd front
 
+3. Instale as dependências:
+   ```bash
+   npm install
+
+4. Execute o projeto:
+   ```bash
+   npm start
+
+---
+
+## 💬 Testando a Tela de Chat
+
+1. Após rodar o projeto, abra seu navegador e vá até a tela de chat. Para isso, acesse a URL:
+   ```bash
+   http://localhost:3000/chat
+   
+2. Ao acessar a tela de chat, você poderá enviar e receber mensagens em tempo real.
